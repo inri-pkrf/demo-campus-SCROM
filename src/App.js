@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './App.css';
 
+import Home from './pages/Home';
+import Quiz from './pages/Quiz';
+import TextPage from './pages/TextPage';
+import GamePage from './pages/GamePage';
+
 function App() {
+  // const navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <img
+        src={`${process.env.PUBLIC_URL}/assets/logo.png`}
+        alt="main-logo"
+        className="main-logo"
+        // onClick={() => navigate('/')}
+      />
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/text" element={<TextPage />} />
+          <Route path="/game" element={<GamePage />} />
+        </Routes>
+      </Router>
+
+    </>
   );
 }
 

@@ -1,0 +1,83 @@
+.page.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.page.home h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Karantina';
+}
+
+.buttons-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 400px;
+  align-items: center;
+}
+
+/* כפתורים שונים עם צבעים שונים */
+.button-home {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  font-family: 'Assistant';
+  color: white;
+}
+
+/* צבעים לפי סוג כפתור */
+.button-home.quiz {
+  background: linear-gradient(135deg, #3498db, #6dd5ed);
+}
+.button-home.quiz:hover {
+  background: linear-gradient(135deg, #2980b9, #3db2f0);
+}
+
+.button-home.text {
+  background: linear-gradient(135deg, #2ecc71, #55efc4);
+}
+.button-home.text:hover {
+  background: linear-gradient(135deg, #27ae60, #4cd137);
+}
+
+.button-home.game {
+  background: linear-gradient(135deg, #e67e22, #f6b93b);
+}
+.button-home.game:hover {
+  background: linear-gradient(135deg, #d35400, #f1c40f);
+}
+
+.button-home:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 600px) {
+  .buttons-home {
+    max-width: 90%;
+  }
+  .button-home {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
